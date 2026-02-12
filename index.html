@@ -1,0 +1,59 @@
+
+Ellipse · HTML
+Copy
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рисование эллипса</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        
+        canvas {
+            border: 2px solid #333;
+            background-color: white;
+            margin-top: 20px;
+        }
+        
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Рисование эллипса</h1>
+    <canvas id="myCanvas" width="600" height="400"></canvas>
+
+    <script>
+        // Получаем canvas и контекст для рисования
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Функция для рисования эллипса
+        function drawEllipse(x, y, radiusX, radiusY, color) {
+            ctx.beginPath();
+            ctx.ellipse(x, y, radiusX, radiusY, 0, 0, 2 * Math.PI);
+            ctx.fillStyle = color;
+            ctx.fill();
+            ctx.strokeStyle = '#000';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+        }
+
+        // Рисуем несколько эллипсов
+        drawEllipse(300, 200, 150, 80, '#ff6b6b');  // Красный эллипс в центре
+        drawEllipse(150, 100, 80, 50, '#4ecdc4');   // Голубой эллипс слева вверху
+        drawEllipse(450, 300, 100, 60, '#ffe66d');  // Желтый эллипс справа внизу
+    </script>
+</body>
+</html>
