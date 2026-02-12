@@ -38,8 +38,16 @@ Copy
         // Получаем canvas и контекст для рисования
         const canvas = document.getElementById('myCanvas');
         const ctx = canvas.getContext('2d');
-
-        // Функция для рисования эллипса
+//rect
+ function rect(x, y, radx, rady, color) {
+     ctx.beginPath();
+     ctx.rect(x, y, radx, rady,0, 0, 2 * Math.PI);
+     ctx.fillstyle=color;
+     ctx.strokeStyle='#000';
+     ctx.linewidth=2;
+     ctx.stroke();
+ }
+               // Функция для рисования эллипса
         function drawEllipse(x, y, radiusX, radiusY, color) {
             ctx.beginPath();
             ctx.ellipse(x, y, radiusX, radiusY, 0, 0, 2 * Math.PI);
@@ -49,7 +57,8 @@ Copy
             ctx.lineWidth = 2;
             ctx.stroke();
         }
-        
+        //tat
+        rect(44, 55, 66, 66, '#ff6b6b');
         // Рисуем несколько эллипсов
          drawEllipse(300, 200, 200, 80, '#ff6b6b');  // Красный эллипс в центре
         drawEllipse(150, 100, 80, 50, '#4ecdc4');   // Голубой эллипс слева вверху
